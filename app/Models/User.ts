@@ -24,7 +24,9 @@ export default class User extends BaseModel {
 
   @beforeCreate()
   public static assignUuid(user: User) {
-    if (user.id === null) {
+    if (user.$dirty.id) {
+      user.id
+    } else {
       user.id = uuid()
     }
   }
