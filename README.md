@@ -46,3 +46,11 @@ To run database seeding you can use command below
 ```bash
 node ace db:seed
 ```
+
+## Testing Unit
+
+To run testing you can use command below
+
+```bash
+node ace test
+```
