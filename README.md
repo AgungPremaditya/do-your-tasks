@@ -52,5 +52,14 @@ node ace db:seed
 To run testing you can use command below
 
 ```bash
-node ace test
+node ace test unit
+```
+
+## Dummy Data
+
+To using this API you can use dummy user below
+
+```
+email : schias@gmail.com
+password : secret123
 ```
