@@ -34,6 +34,10 @@ export default class Task extends BaseModel {
 
   @beforeCreate()
   public static assignUuid(task: Task) {
-    task.id = uuid()
+    if (task.$dirty.id) {
+      task.id
+    } else {
+      task.id = uuid()
+    }
   }
 }
