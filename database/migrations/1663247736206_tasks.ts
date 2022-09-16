@@ -8,13 +8,8 @@ export default class extends BaseSchema {
       table.uuid('id').primary()
       table.string('title', 180).notNullable()
       table.string('description', 255).nullable()
-      table
-        .uuid('category_id')
-        .unsigned()
-        .references('id')
-        .inTable('categories')
-        .onDelete('CASCADE')
-      table.uuid('user_id').unsigned().references('id').inTable('users').onDelete('CASCADE')
+      table.uuid('category_id').references('id').inTable('categories').onDelete('CASCADE')
+      table.uuid('user_id').references('id').inTable('users').onDelete('CASCADE')
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */

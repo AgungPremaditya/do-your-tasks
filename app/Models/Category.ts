@@ -17,6 +17,8 @@ export default class Category extends BaseModel {
 
   @beforeCreate()
   public static assignUuid(category: Category) {
-    category.id = uuid()
+    if (category.id === null) {
+      category.id = uuid()
+    }
   }
 }

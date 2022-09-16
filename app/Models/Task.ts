@@ -23,17 +23,13 @@ export default class Task extends BaseModel {
   @column()
   public categoryId: string
 
-  @belongsTo(() => Category, {
-    foreignKey: 'categoryId',
-  })
+  @belongsTo(() => Category)
   public category: BelongsTo<typeof Category>
 
   @column()
   public userId: string
 
-  @belongsTo(() => User, {
-    foreignKey: 'userId',
-  })
+  @belongsTo(() => User)
   public user: BelongsTo<typeof User>
 
   @beforeCreate()
